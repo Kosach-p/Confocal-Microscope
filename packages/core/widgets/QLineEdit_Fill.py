@@ -1,23 +1,23 @@
 from Icon.IconName import *
 from PyQt6.QtWidgets import (
-    QWidget, QHBoxLayout, QPushButton, QLineEdit, QLabel, QApplication
+    QWidget, QHBoxLayout, QLineEdit, QLabel, QApplication,
+    QFrame, QSizePolicy
 )
 from PyQt6.QtCore import Qt, QEvent, pyqtSignal
-from PyQt6.QtGui import QIcon, QFont
+from PyQt6.QtGui import QFont, QColor
 import re
 import weakref
+
 from packages.Controllers.controllers_config import UNITS
 from packages.core.validators.numeric_validator import calc_str
 
 
-class DragButtonNumberInputStatic(QWidget):
+class DragNumberInputStatic(QWidget):
     valueChanged = pyqtSignal(dict)   # {'value': <в LSB>}
     valueSet = pyqtSignal(dict)       # {'value': <в LSB>}
 
-    # Все живые экземпляры (weakref, чтобы не течь)
     _instances = []
 
-    # Единый размер шрифта для всех элементов виджета
     _FONT_SIZE = 11
 
     _ALIGN_RIGHT = Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter
@@ -44,22 +44,7 @@ class DragButtonNumberInputStatic(QWidget):
     @classmethod
     def apply_units_set(cls, units_all: dict, lang: str | None = None):
         """
-        Раздаёт единицы ВСЕМ экземплярам класса из общего словаря units_all.
-
-        units_all — полный словарь вида:
-            {
-                'beam_steerers': {
-                    'display_unit': 'mm',
-                    'lsb_unit': 'LSB',
-                    'units': {...},
-                },
-                'positioners': {...},
-                ...
-            }
-
-        Каждый экземпляр берёт свой набор по self.units_set_name.
-        Если ключа нет — экземпляр остаётся без изменений.
-        lang — 'ru' / 'en' / None. None = не менять язык.
+        Раздаёт единицы всем экземплярам по их units_set_name.
         Заодно подчищает мёртвые weakref'ы.
         """
         alive = []
@@ -84,19 +69,13 @@ class DragButtonNumberInputStatic(QWidget):
     # =================================================================
 
     def __init__(self, label='', decimal=3,
-                 min_val=0, max_val=None, default=0.0,
+                 min_val=0, max_val=65535, default=0.0,
                  wheel_step_multiplier=1.0,
                  alignment='center',
                  units_set_name='default',
                  units_set=UNITS,
-                 lang='ru'):
-        """
-        units_set_name : ключ набора единиц (например, 'beam_steerers').
-        units_set      : начальный словарь единиц (если известен сразу).
-                         Если None — экземпляр стартует без единиц,
-                         их можно раздать через apply_units_set(...).
-        lang           : 'ru' / 'en' — язык ярлыков единиц.
-        """
+                 lang='ru',
+                 fill_color=QColor(255, 165, 0, 40)):
         super().__init__()
 
         self.name = label
@@ -138,20 +117,24 @@ class DragButtonNumberInputStatic(QWidget):
         outer.setContentsMargins(0, 0, 0, 0)
         outer.setSpacing(0)
 
-        self._btn_minus = QPushButton()
-        self._btn_minus.setIcon(QIcon(arrow_left_Icon))
-        self._btn_minus.setFixedSize(24, 25)
-        self._btn_minus.setFont(self._font)
-        self._btn_minus.setProperty("dragBtn", True)
-        self._btn_minus.setProperty("dragBtnLeft", True)
-        self._btn_minus.pressed.connect(self._stepDown)
-        outer.addWidget(self._btn_minus)
-
         self._wrapper = QWidget()
         self._wrapper.setFixedHeight(25)
         self._wrapper.setProperty("dragWrapper", True)
+        self._wrapper.setSizePolicy(
+            QSizePolicy.Policy.Expanding,
+            QSizePolicy.Policy.Fixed
+        )
 
-        # Подпись — прижата к левому краю
+        # --- Полоса заполнения (под текстом) ---
+        self._fill_frame = QFrame(self._wrapper)
+        self._fill_frame.setAutoFillBackground(True)
+        p = self._fill_frame.palette()
+        p.setColor(self._fill_frame.backgroundRole(), fill_color)
+        self._fill_frame.setPalette(p)
+        self._fill_frame.setAttribute(Qt.WidgetAttribute.WA_TransparentForMouseEvents)
+        self._fill_frame.setProperty("dragFill", True)
+
+        # --- Подпись ---
         self._label = None
         if label:
             self._label = QLabel(label, self._wrapper)
@@ -163,9 +146,13 @@ class DragButtonNumberInputStatic(QWidget):
             self._label.setAttribute(Qt.WidgetAttribute.WA_TransparentForMouseEvents)
             self._label.setProperty("dragLabel", True)
 
+        # --- Поле ввода ---
         self._line = QLineEdit(self._wrapper)
         self._line.setFont(self._font)
-        self._line.setStyleSheet("background: transparent; border: none; color: #ffffff; padding: 0px; margin: 0px;")
+        self._line.setStyleSheet(
+            "background: transparent; border: none; color: #ffffff; "
+            "padding: 0px; margin: 0px;"
+        )
         self._line.setReadOnly(True)
         self._line.setProperty("dragLine", True)
         self._line.installEventFilter(self)
@@ -173,36 +160,26 @@ class DragButtonNumberInputStatic(QWidget):
 
         outer.addWidget(self._wrapper)
 
-        self._btn_plus = QPushButton()
-        self._btn_plus.setIcon(QIcon(arrow_right_Icon))
-        self._btn_plus.setFixedSize(24, 25)
-        self._btn_plus.setFont(self._font)
-        self._btn_plus.setProperty("dragBtn", True)
-        self._btn_plus.setProperty("dragBtnRight", True)
-        self._btn_plus.pressed.connect(self._stepUp)
-        outer.addWidget(self._btn_plus)
-
         self.setProperty("dragInput", True)
+        self.setProperty("editing", False)
 
         self.setAlignmentMode(alignment)
 
-        # Локальная инициализация единиц, если словарь известен сразу
+        # Локальная инициализация единиц
         if units_set is not None:
             self._set_units_from_dict(units_set)
 
         # Регистрация в общем списке класса
         type(self)._instances.append(weakref.ref(self))
-        self.apply_units_set(units_all=units_set)
+
+        # Первая отрисовка полосы
+        self._updateFillFrame()
 
     # =================================================================
-    # Установка единиц (один экземпляр)
+    # Установка единиц
     # =================================================================
 
     def _set_units_from_dict(self, units_set: dict):
-        """
-        Устанавливает экземпляру единицы из словаря.
-        Не меняет _current_value (оно в LSB), но обновляет отображение.
-        """
         raw_units = units_set.get('units') or {}
         self._units = {}
         self._units_meta = {}
@@ -216,7 +193,6 @@ class DragButtonNumberInputStatic(QWidget):
                 'en': u.get('en', key_l),
             }
 
-        # LSB-единица (для калибровки), если её нет — добавляем
         self._lsb_unit = str(units_set.get('lsb_unit', 'lsb')).lower()
         if self._lsb_unit not in self._units:
             self._units[self._lsb_unit] = 1.0
@@ -225,31 +201,21 @@ class DragButtonNumberInputStatic(QWidget):
                 'ru': self._lsb_unit, 'en': self._lsb_unit,
             }
 
-        # Базовая физическая — та, у которой коэф == 1
         base_candidates = [n for n, c in self._units.items()
                            if abs(c - 1.0) < 1e-15]
         self._base_unit = base_candidates[0] if base_candidates else self._lsb_unit
 
-        # Единица отображения
         disp = str(units_set.get('display_unit', self._base_unit)).lower()
         if disp not in self._units:
             disp = self._base_unit
         self._display_unit = disp
 
-        # Индекс ярлыков для парсера
         self._build_label_index()
-
-        # step и decimal под текущую единицу отображения
         self._sync_step_decimal()
-
-        # Перерисовать
         self._refresh_display()
+        self._updateFillFrame()
 
     def _build_label_index(self):
-        """
-        Строит обратный индекс: любой вариант ввода ('мм', 'mm', 'um', 'мкм')
-        → технический ключ ('mm', 'um'). Регистронезависимо.
-        """
         idx = {}
         for key, meta in self._units_meta.items():
             idx[key.lower()] = key
@@ -260,7 +226,6 @@ class DragButtonNumberInputStatic(QWidget):
         self._label_index = idx
 
     def _sync_step_decimal(self):
-        """Подтянуть step и decimal под текущую единицу отображения."""
         meta = self._units_meta.get(self._display_unit)
         if meta is None:
             return
@@ -281,7 +246,6 @@ class DragButtonNumberInputStatic(QWidget):
         return self._lsb_unit
 
     def unit_label(self, unit_key: str | None = None, lang: str | None = None) -> str:
-        """Ярлык единицы на нужном языке. По умолчанию — текущей, на self.lang."""
         key = (unit_key or self._display_unit).lower()
         meta = self._units_meta.get(key)
         if meta is None:
@@ -290,13 +254,13 @@ class DragButtonNumberInputStatic(QWidget):
         return meta.get(lg) or meta.get('en') or key
 
     def set_display_unit(self, unit: str):
-        """Принимает и технический ключ, и ярлык, в любом регистре."""
         key = self._label_index.get(str(unit).lower())
         if key is None:
             raise ValueError(f"Неизвестная единица: {unit!r}")
         self._display_unit = key
         self._sync_step_decimal()
         self._refresh_display()
+        self._updateFillFrame()
 
     def set_lang(self, lang: str):
         self.lang = lang
@@ -334,7 +298,6 @@ class DragButtonNumberInputStatic(QWidget):
         return self._parse_sum_of_pairs(text)
 
     def _resolve_unit(self, unit_raw: str) -> str:
-        """'мм' / 'mm' / 'MM' → 'mm'. Бросает ValueError."""
         key = self._label_index.get(str(unit_raw).lower())
         if key is None:
             raise ValueError(f"Неизвестная единица: {unit_raw!r}")
@@ -433,6 +396,28 @@ class DragButtonNumberInputStatic(QWidget):
         self._line.setText(self._format_value(self._current_value))
 
     # =================================================================
+    # Полоса заполнения
+    # =================================================================
+
+    def _updateFillFrame(self):
+        """Ширина полосы пропорциональна значению в [min_val, max_val]."""
+        w = self._wrapper.width()
+        h = self._wrapper.height()
+
+        if (self.min_val is None or self.max_val is None
+                or self.max_val == self.min_val):
+            ratio = 0.0
+        else:
+            ratio = (self._current_value - self.min_val) / (self.max_val - self.min_val)
+            ratio = max(0.0, min(1.0, ratio))
+
+        self._fill_frame.setGeometry(
+            2, 2,
+            int((w - 4) * ratio),
+            h - 4
+        )
+
+    # =================================================================
     # Ограничения
     # =================================================================
 
@@ -444,22 +429,27 @@ class DragButtonNumberInputStatic(QWidget):
         return value_lsb
 
     # =================================================================
-    # Шаг / колесо
+    # Перевод пикселей мыши в LSB
     # =================================================================
 
-    def _stepUp(self):
-        step_lsb = self.to_base(self.step)
-        self._current_value = self._clamp(self._current_value + step_lsb)
-        self._refresh_display()
-        self.valueChanged.emit({'value': self._current_value})
-        self.valueSet.emit({'value': self._current_value})
+    def _delta_x_to_lsb(self, delta_x: float) -> float:
+        """
+        От края до края виджета = весь диапазон [min_val, max_val].
+        Если диапазон не задан — падаем на шаг в единицах отображения.
+        """
+        if (self.min_val is None or self.max_val is None
+                or self.max_val == self.min_val):
+            return delta_x * self.to_base(self.step)
 
-    def _stepDown(self):
-        step_lsb = self.to_base(self.step)
-        self._current_value = self._clamp(self._current_value - step_lsb)
-        self._refresh_display()
-        self.valueChanged.emit({'value': self._current_value})
-        self.valueSet.emit({'value': self._current_value})
+        pixel_range = self._wrapper.width()
+        if pixel_range <= 0:
+            pixel_range = 1
+        value_range = self.max_val - self.min_val
+        return delta_x * (value_range / pixel_range)
+
+    # =================================================================
+    # Колесо
+    # =================================================================
 
     def wheelEvent(self, event):
         delta = event.angleDelta().y()
@@ -474,6 +464,7 @@ class DragButtonNumberInputStatic(QWidget):
             self._current_value = self._clamp(self._current_value - step_lsb)
 
         self._refresh_display()
+        self._updateFillFrame()
         self.valueChanged.emit({'value': self._current_value})
         self.valueSet.emit({'value': self._current_value})
         event.accept()
@@ -501,6 +492,7 @@ class DragButtonNumberInputStatic(QWidget):
             elif event.key() == Qt.Key.Key_Escape:
                 self._current_value = self._press_value
                 self._refresh_display()
+                self._updateFillFrame()
                 self._exitEditMode()
                 return True
 
@@ -526,9 +518,11 @@ class DragButtonNumberInputStatic(QWidget):
 
             if self._drag_active:
                 delta_x = event.globalPosition().x() - self._last_mouse_x
-                self._current_value += delta_x * self.to_base(self.step)
+                delta_lsb = self._delta_x_to_lsb(delta_x)
+                self._current_value += delta_lsb
                 self._current_value = self._clamp(self._current_value)
                 self._refresh_display()
+                self._updateFillFrame()
                 self.valueChanged.emit({'value': self._current_value})
                 self._last_mouse_x = event.globalPosition().x()
                 return True
@@ -563,12 +557,12 @@ class DragButtonNumberInputStatic(QWidget):
 
         if self._label:
             self._label.hide()
+        self._fill_frame.hide()
 
         self._line.setReadOnly(False)
         self._line.setAlignment(self._ALIGN_CENTER)
         self._line.setFocus()
 
-        # выделяем только число, суффикс единицы остаётся видимым
         text = self._line.text()
         space_idx = text.find(' ')
         if space_idx == -1:
@@ -605,6 +599,8 @@ class DragButtonNumberInputStatic(QWidget):
 
         if self._label:
             self._label.show()
+        self._fill_frame.show()
+        self._updateFillFrame()
 
         self.valueSet.emit({'value': self._current_value})
 
@@ -626,6 +622,7 @@ class DragButtonNumberInputStatic(QWidget):
             self._label.setGeometry(
                 6, 0, self._wrapper.width() - 6, self._wrapper.height()
             )
+        self._updateFillFrame()
 
     def value(self) -> float:
         """Значение в LSB."""
@@ -635,6 +632,7 @@ class DragButtonNumberInputStatic(QWidget):
         """Установить значение в LSB."""
         self._current_value = self._clamp(float(val))
         self._refresh_display()
+        self._updateFillFrame()
 
     def value_display(self) -> float:
         """Значение в текущей единице отображения."""
@@ -649,7 +647,7 @@ class DragButtonNumberInputStatic(QWidget):
 
     def _repolish(self):
         """Переприменить QSS к себе и дочерним виджетам после смены свойства."""
-        widgets = (self, self._wrapper, self._btn_minus, self._btn_plus, self._line)
+        widgets = (self, self._wrapper, self._line, self._fill_frame)
         if self._label is not None:
             widgets = widgets + (self._label,)
         for w in widgets:

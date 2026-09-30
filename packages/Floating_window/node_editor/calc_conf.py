@@ -136,6 +136,6 @@ def get_node_type_name(node_type: int) -> str:
 # ==================================================== ИМПОРТ НОД ====================================================
 from packages.Floating_window.node_editor.nodes import *
 from packages.Floating_window.node_editor.nodes.DATA_IO.Import.Internal import *
-from packages.Floating_window.node_editor.nodes.DATA_IO.Import.External import *
+#from packages.Floating_window.node_editor.nodes.DATA_IO.Import.External import *
 from packages.Floating_window.node_editor.nodes.DATA_IO.Export.Internal import *
-from packages.Floating_window.node_editor.nodes.DATA_IO.Export.External import *
+#from packages.Floating_window.node_editor.nodes.DATA_IO.Export.External import *
