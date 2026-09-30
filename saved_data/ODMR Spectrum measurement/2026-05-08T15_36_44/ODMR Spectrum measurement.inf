@@ -1,0 +1,22 @@
+{
+  "comment": "Очень долго снимался спектр ОДМР SiC, но почему то почти ничего нет. Возможно поле не попадало хорошо",
+  "name": "ODMR Spectrum measurement",
+  "metadata": {
+    "created": "2026-05-08T15_36_44",
+    "description": "ODMR Spectrum measurement"
+  },
+  "parameters": {
+    "start_nm": 800.0,
+    "end_nm": 1600.0,
+    "step_nm": 1.0,
+    "accum_time_ms": 500,
+    "number_repetitions": 9999,
+    "data_points": 801
+  },
+  "units": {
+    "start_nm": "nanometers",
+    "end_nm": "nanometers",
+    "step_nm": "nanometers",
+    "accum_time_ms": "milliseconds"
+  }
+}

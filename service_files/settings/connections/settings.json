@@ -1,0 +1,27 @@
+{
+    "profiles": {
+        "0": {
+            "port": {
+                "description": "USB-SERIAL CH340 (COM16)",
+                "device": "COM16",
+                "hwid": "USB VID:PID=1A86:7523 SER= LOCATION=1-4",
+                "interface": null,
+                "location": "1-4",
+                "manufacturer": "wch.cn",
+                "pid": 29987,
+                "product": null,
+                "serial_number": "",
+                "vid": 6790
+            },
+            "id": 0,
+            "baudrate": 115200,
+            "word_length": 8,
+            "parity": "N",
+            "stop_bits": 1,
+            "write_timeout": 0.005,
+            "read_timeout": 0.005,
+            "type": "ser",
+            "name": "COM-port"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+  "comment": "ОДМР Алмаза (самый тёмный, фиолетовый, не из общей серии). Делался как тестовый, выглядит красиво)",
+  "name": "ODMR Spectrum measurement",
+  "metadata": {
+    "created": "2026-04-13T15_23_24",
+    "description": "ODMR Spectrum measurement"
+  },
+  "parameters": {
+    "start_nm": 2700.0,
+    "end_nm": 3000.0,
+    "step_nm": 0.5,
+    "accum_time_ms": 250,
+    "number_repetitions": 999999,
+    "data_points": 601
+  },
+  "units": {
+    "start_nm": "nanometers",
+    "end_nm": "nanometers",
+    "step_nm": "nanometers",
+    "accum_time_ms": "milliseconds"
+  }
+}

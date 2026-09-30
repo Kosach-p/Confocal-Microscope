@@ -1,0 +1,29 @@
+{
+  "comment": "SiC скан",
+  "name": "3D scan",
+  "metadata": {
+    "created": "2026-05-08T13_04_30",
+    "description": "3D scan"
+  },
+  "parameters": {
+    "x1": 6369,
+    "y1": 15676,
+    "z1": 0,
+    "x2": 57587,
+    "y2": 54118,
+    "z2": 0,
+    "step_x": 512,
+    "step_y": 512,
+    "step_z": 1024,
+    "accum_time": 50,
+    "Np_x": 100,
+    "Np_y": 75,
+    "Np_z": 1,
+    "Np_slice": 7500,
+    "Np_total": 7500
+  },
+  "units": {
+    "cord": "LSB",
+    "accum_time_ms": "ms"
+  }
+}

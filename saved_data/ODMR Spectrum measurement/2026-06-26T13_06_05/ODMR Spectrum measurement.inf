@@ -1,0 +1,22 @@
+{
+  "comment": "Аномальный ОДМР в 4H-SiC",
+  "name": "ODMR Spectrum measurement",
+  "metadata": {
+    "created": "2026-06-26T13_06_05",
+    "description": "ODMR Spectrum measurement"
+  },
+  "parameters": {
+    "start_nm": 1000.0,
+    "end_nm": 1600.0,
+    "step_nm": 5.0,
+    "accum_time_ms": 1000,
+    "number_repetitions": 999999,
+    "data_points": 121
+  },
+  "units": {
+    "start_nm": "nanometers",
+    "end_nm": "nanometers",
+    "step_nm": "nanometers",
+    "accum_time_ms": "milliseconds"
+  }
+}

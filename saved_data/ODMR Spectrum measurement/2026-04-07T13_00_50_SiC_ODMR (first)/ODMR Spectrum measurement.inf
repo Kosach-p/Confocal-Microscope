@@ -1,0 +1,22 @@
+{
+  "comment": "Скан ОДМР SiC. Тут он явный, но диапазон не большой. Так же заметим, что линия тут гораздо уже, чем получалась потом, возможно тут это как раз изгиб поверхности, но не уверен",
+  "name": "ODMR Spectrum measurement",
+  "metadata": {
+    "created": "2026-04-07T13_00_50",
+    "description": "ODMR Spectrum measurement"
+  },
+  "parameters": {
+    "left_edge": 1250.0,
+    "right_edge": 1400.0,
+    "step": 1.0,
+    "accum_time": 1000,
+    "number_repetitions": 99999,
+    "data_points": 151
+  },
+  "units": {
+    "left_edge": "MHz",
+    "right_edge": "MHz",
+    "step": "MHz",
+    "accum_time_ms": "milliseconds"
+  }
+}

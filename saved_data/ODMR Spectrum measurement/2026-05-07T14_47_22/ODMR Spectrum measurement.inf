@@ -1,0 +1,22 @@
+{
+  "comment": "ОДМР SiC. Круто, круто круто. Просто повторили",
+  "name": "ODMR Spectrum measurement",
+  "metadata": {
+    "created": "2026-05-07T14_47_22",
+    "description": "ODMR Spectrum measurement"
+  },
+  "parameters": {
+    "start_nm": 1200.0,
+    "end_nm": 1600.0,
+    "step_nm": 2.0,
+    "accum_time_ms": 500,
+    "number_repetitions": 99999,
+    "data_points": 201
+  },
+  "units": {
+    "start_nm": "nanometers",
+    "end_nm": "nanometers",
+    "step_nm": "nanometers",
+    "accum_time_ms": "milliseconds"
+  }
+}

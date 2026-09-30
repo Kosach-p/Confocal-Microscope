@@ -1,0 +1,29 @@
+{
+  "comment": "Скан светящегося кусочка SiC (SiC лежит на боку, светим в торец)",
+  "name": "3D scan",
+  "metadata": {
+    "created": "2026-05-14T09_58_24",
+    "description": "3D scan"
+  },
+  "parameters": {
+    "x1": 33435,
+    "y1": 37034,
+    "z1": 0,
+    "x2": 37414,
+    "y2": 40953,
+    "z2": 0,
+    "step_x": 64,
+    "step_y": 64,
+    "step_z": 1024,
+    "accum_time": 10,
+    "Np_x": 62,
+    "Np_y": 61,
+    "Np_z": 1,
+    "Np_slice": 3782,
+    "Np_total": 3782
+  },
+  "units": {
+    "cord": "LSB",
+    "accum_time_ms": "ms"
+  }
+}

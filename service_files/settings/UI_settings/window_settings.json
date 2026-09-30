@@ -1,0 +1,39 @@
+{
+    "View2DClass": {
+        "parameters": {
+            "default_settings": "{}"
+        }
+    },
+    "View3DClass": {
+        "parameters": {
+            "default_settings": "{}",
+            "default_save_dir": ""
+        }
+    },
+    "SpectrometerWindowClass": {
+        "parameters": {
+            "default_settings": "{}",
+            "default_save_dir": ""
+        }
+    },
+    "ODMRSpectrometerWindowClass": {
+        "parameters": {
+            "default_settings": "{}",
+            "default_save_dir": ""
+        }
+    },
+    "StarLightWindowClass": {
+        "default_save_dir": "101"
+    },
+    "GcodeWindowClass": {
+        "parameters": {
+            "default_settings": "{}",
+            "default_save_dir": ""
+        }
+    },
+    "MainWindow": {
+        "parameters": {
+            "last_window": "View2DClass"
+        }
+    }
+}

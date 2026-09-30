@@ -1,0 +1,121 @@
+{
+  "save_set": {
+    "row_separator": null,
+    "decimal_separator": ",",
+    "thousands_separator": " ",
+    "string_quotes": "\"",
+    "encoding": "UTF-8",
+    "empty_value": "NaN",
+    "date_separator": null,
+    "date_format": null,
+    "time_separator": ":",
+    "time_format": null,
+    "temp_directory": "",
+    "temp_format": "CSV"
+  },
+  "HotKey": {
+    "Main Window": {
+      "name_ru": "Главное окно",
+      "actions": {
+        "file.open": {
+          "name_ru": "Открыть файл",
+          "keys": "Ctrl+O"
+        },
+        "file.save": {
+          "name_ru": "Сохранить",
+          "keys": "Ctrl+S"
+        },
+        "file.save_as": {
+          "name_ru": "Сохранить как",
+          "keys": "Ctrl+Shift+S"
+        },
+        "file.save_all": {
+          "name_ru": "Сохранить всё",
+          "keys": "Ctrl+Alt+S"
+        },
+        "view.fullscreen": {
+          "name_ru": "Полный экран",
+          "keys": "F11"
+        },
+        "view.2d": {
+          "name_ru": "2D вид",
+          "keys": "Ctrl+1"
+        },
+        "view.spectrometer": {
+          "name_ru": "Спектрометр",
+          "keys": "Ctrl+2"
+        },
+        "view.odmr": {
+          "name_ru": "ODMR спектрометр",
+          "keys": "Ctrl+3"
+        },
+        "view.gcode": {
+          "name_ru": "Gcode",
+          "keys": "Ctrl+4"
+        },
+        "floatwindow.node": {
+          "name_ru": "Открыть редактор нод",
+          "keys": "Ctrl+Alt+Shift+N"
+        },
+        "floatwindow.script": {
+          "name_ru": "Открыть редактор скриптов",
+          "keys": "Ctrl+Shift+Alt+S"
+        },
+        "settings.help": {
+          "name_ru": "Руководство пользователя",
+          "keys": "Ctrl+H"
+        }
+      }
+    },
+    "settings": {
+      "name_ru": "Настройки",
+      "actions": {
+        "settings.interface": {
+          "name_ru": "Настройки интерфейса",
+          "keys": "Ctrl+1"
+        },
+        "settings.connection": {
+          "name_ru": "Настройки подключения",
+          "keys": "Ctrl+2"
+        },
+        "settings.device": {
+          "name_ru": "Настройки устройств",
+          "keys": "Ctrl+3"
+        },
+        "settings.save": {
+          "name_ru": "Настройки сохранения",
+          "keys": "Ctrl+4"
+        }
+      }
+    },
+    "editors": {
+      "name_ru": "Редакторы",
+      "actions": {
+        "node_editor.show": {
+          "name_ru": "Нодовый редактор",
+          "keys": "Ctrl+Shift+N"
+        }
+      }
+    }
+  },
+  "General": {
+    "theme": "dark",
+    "length_unit": "м",
+    "wavelength_unit": "нм",
+    "frequency_unit": "Гц",
+    "time_unit": "с",
+    "window_remember_position": true,
+    "window_remember_size": false,
+    "window_restore_interface": true,
+    "window_tray": false,
+    "window_always_on_top": false,
+    "plot_antialiasing": true,
+    "plot_cache_background": true,
+    "plot_fill_under_curve": true,
+    "plot_fill_color": "4CAF50",
+    "plot_rand_line_color": true,
+    "confirm_exit": false,
+    "confirm_stop_experiment": true,
+    "confirm_delete_from_tree": false
+  }
+}

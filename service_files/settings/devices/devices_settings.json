@@ -1,0 +1,6301 @@
+{
+  "beam_steerers": {
+    "ru": "Сканеры  пучка (XY-отклонение)",
+    "devices": [
+      {
+        "id": 1,
+        "name": "Galvo",
+        "name_ru": "Гальвосканер",
+        "client_attr": "Galvoscanner_client",
+        "commands": {
+          "ECHO": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "echo",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "echo",
+                    "value": 0
+                  }
+                ]
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "echo_echo",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "echo_echo",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          },
+          "set_cord": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "x",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  },
+                  {
+                    "name": "y",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "x",
+                    "value": 0
+                  },
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "y",
+                    "value": 0
+                  }
+                ]
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "echo_x",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  },
+                  {
+                    "name": "echo_y",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "echo_x",
+                    "value": 0
+                  },
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "echo_y",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          },
+          "get_cord": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": []
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "x",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  },
+                  {
+                    "name": "y",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "x",
+                    "value": 0
+                  },
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "y",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          },
+          "send_gcode_F": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "F",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "F",
+                    "value": 0
+                  }
+                ]
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "status",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "status",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          },
+          "send_gcode_G00": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "x",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  },
+                  {
+                    "name": "y",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "x",
+                    "value": 0
+                  },
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "y",
+                    "value": 0
+                  }
+                ]
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "status",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "status",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          },
+          "send_gcode_G01": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "x",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  },
+                  {
+                    "name": "y",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "x",
+                    "value": 0
+                  },
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "y",
+                    "value": 0
+                  }
+                ]
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "status",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "status",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          },
+          "send_gcode_G04": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "P",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  },
+                  {
+                    "name": "x",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "P",
+                    "value": 0
+                  },
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "x",
+                    "value": 0
+                  }
+                ]
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "status",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "status",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          },
+          "send_gcode_M03": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": []
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "status",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "status",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          },
+          "send_gcode_M05": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": []
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "status",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "status",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          },
+          "send_gcode_S": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "S",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "S",
+                    "value": 0
+                  }
+                ]
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "status",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "status",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          },
+          "send_gcode_M112": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": []
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": []
+              }
+            }
+          }
+        },
+        "connection": {
+          "profile": {
+            "id": "0",
+            "name": "COM-port"
+          },
+          "echo_enable": true,
+          "poll_interval": 1.0
+        },
+        "parameters": {
+          "x_min": 0,
+          "y_min": 0,
+          "x_max": 0,
+          "y_max": 0,
+          "x_um_to_pixel": 0.0,
+          "y_um_to_pixel": 0.0,
+          "x_backlash": 0.0,
+          "y_backlash": 0.0,
+          "x_hysteresis": 0.0,
+          "y_hysteresis": 0.0,
+          "xsqr_hysteresis": 0.0,
+          "ysqr_hysteresis": 0.0
+        }
+      }
+    ],
+    "current_device_id": 0
+  },
+  "detectors": {
+    "ru": "Детекторы света",
+    "devices": [
+      {
+        "id": 2,
+        "name": "PhotonCounter",
+        "name_ru": "Счётчик фотонов",
+        "client_attr": "PhotonCounter_client",
+        "commands": {
+          "ECHO": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "params": [
+                  {
+                    "name": "echo",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "\r\n",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "X.",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "name": "echo",
+                    "value": 0,
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0"
+                  }
+                ]
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "params": [
+                  {
+                    "name": "echo_echo",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "\r\n",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "X.",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "echo_echo",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          },
+          "GetCurrentCount": {
+            "coder_type": "ascii",
+            "decoder_type": "ascii",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "\r\n",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "X.",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": []
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "status",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  },
+                  {
+                    "name": "count",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "\r\n",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "name": "status",
+                    "value": 502323251,
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": "f",
+                    "param_space": -1,
+                    "param_alignment": "right",
+                    "fill_symbol": "0"
+                  },
+                  {
+                    "name": "count",
+                    "value": 0,
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": "f",
+                    "param_space": 0,
+                    "param_alignment": "right",
+                    "fill_symbol": "0"
+                  }
+                ]
+              }
+            }
+          },
+          "StartCounting": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "\r\n",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "X.",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": []
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "\r\n",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "X.",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": []
+              }
+            }
+          },
+          "GetCounting": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "\r\n",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "X.",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": []
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "status",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  },
+                  {
+                    "name": "count",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "\r\n",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "X.",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "status",
+                    "value": 0
+                  },
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "count",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          },
+          "SetAccumTime": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "accum_time",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "\r\n",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "X.",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "accum_time",
+                    "value": 0
+                  }
+                ]
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "echo",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "\r\n",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "X.",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "echo",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          },
+          "SetComparatorLevel": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "CompLevel",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "\r\n",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "X.",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "CompLevel",
+                    "value": 0
+                  }
+                ]
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "echo",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "\r\n",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "X.",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "echo",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "connection": {
+          "profile": {
+            "id": "0",
+            "name": "COM-port"
+          },
+          "echo_enable": true,
+          "poll_interval": 1.0
+        },
+        "parameters": {
+          "accum_time_ms": 100,
+          "period_of_polling": 100,
+          "comp_level": 0
+        }
+      }
+    ],
+    "current_device_id": 0
+  },
+  "positioners": {
+    "ru": "Позиционеры (XYZ-перемещение)",
+    "devices": [
+      {
+        "id": 3,
+        "name": "Piezo",
+        "name_ru": "Пьезо",
+        "client_attr": "Piezo_client",
+        "commands": {
+          "ECHO": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "echo",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "echo",
+                    "value": 0
+                  }
+                ]
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "echo_echo",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "echo_echo",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          },
+          "send_gcode_F": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "F",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "F",
+                    "value": 0
+                  }
+                ]
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "status",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "status",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          },
+          "send_gcode_G01": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "X",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  },
+                  {
+                    "name": "Y",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  },
+                  {
+                    "name": "Z",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "X",
+                    "value": 0
+                  },
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "Y",
+                    "value": 0
+                  },
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "Z",
+                    "value": 0
+                  }
+                ]
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "status",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "status",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "connection": {
+          "profile": {
+            "id": "0",
+            "name": "COM-port"
+          },
+          "echo_enable": true,
+          "poll_interval": 1.0
+        },
+        "parameters": {
+          "x_min": 0,
+          "y_min": 0,
+          "z_min": 0,
+          "x_max": 0,
+          "y_max": 0,
+          "z_max": 0,
+          "x_um_to_pixel": 0.0,
+          "y_um_to_pixel": 0.0,
+          "z_um_to_pixel": 0.0,
+          "rise_speed": 0.0
+        }
+      }
+    ],
+    "current_device_id": 0
+  },
+  "spectral_tuners": {
+    "ru": "Монохроматоры",
+    "devices": [
+      {
+        "id": 4,
+        "name": "StepperMotor",
+        "name_ru": "Шаговый мотор",
+        "client_attr": "StepperMotor_client",
+        "commands": {
+          "ECHO": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "echo",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "echo",
+                    "value": 0
+                  }
+                ]
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "echo_echo",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "echo_echo",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          },
+          "stepper_motor_go": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "direction",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  },
+                  {
+                    "name": "travel",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "direction",
+                    "value": 0
+                  },
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "travel",
+                    "value": 0
+                  }
+                ]
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "direction",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  },
+                  {
+                    "name": "travel",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "direction",
+                    "value": 0
+                  },
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "travel",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          },
+          "reset_end_caps_flag": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "flag",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "flag",
+                    "value": 0
+                  }
+                ]
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "echo",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "echo",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          },
+          "get_stepper_status": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "param1",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  },
+                  {
+                    "name": "param2",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "param1",
+                    "value": 0
+                  },
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "param2",
+                    "value": 0
+                  }
+                ]
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "status",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  },
+                  {
+                    "name": "steps",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  },
+                  {
+                    "name": "direction",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  },
+                  {
+                    "name": "endcap1",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  },
+                  {
+                    "name": "endcap2",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  },
+                  {
+                    "name": "stall",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "status",
+                    "value": 0
+                  },
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "steps",
+                    "value": 0
+                  },
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "direction",
+                    "value": 0
+                  },
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "endcap1",
+                    "value": 0
+                  },
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "endcap2",
+                    "value": 0
+                  },
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "stall",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          },
+          "stepper_motor_hold": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "HOLD_Reset",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "HOLD_Reset",
+                    "value": 0
+                  }
+                ]
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "echo",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "echo",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          },
+          "stepper_motor_current_settings": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "I_HOLD",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  },
+                  {
+                    "name": "I_RUN",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  },
+                  {
+                    "name": "I_HOLD_DELAY",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "I_HOLD",
+                    "value": 0
+                  },
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "I_RUN",
+                    "value": 0
+                  },
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "I_HOLD_DELAY",
+                    "value": 0
+                  }
+                ]
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "I_HOLD",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  },
+                  {
+                    "name": "I_RUN",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  },
+                  {
+                    "name": "I_HOLD_DELAY",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "I_HOLD",
+                    "value": 0
+                  },
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "I_RUN",
+                    "value": 0
+                  },
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "I_HOLD_DELAY",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          },
+          "stepper_motor_StallGuard_settings": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "threshold",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "threshold",
+                    "value": 0
+                  }
+                ]
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "echo",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "echo",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          },
+          "stepper_motor_acceleration_settings": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "MAX_speed",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  },
+                  {
+                    "name": "MIN_speed",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  },
+                  {
+                    "name": "accel",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "MAX_speed",
+                    "value": 0
+                  },
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "MIN_speed",
+                    "value": 0
+                  },
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "accel",
+                    "value": 0
+                  }
+                ]
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "MAX_speed",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  },
+                  {
+                    "name": "MIN_speed",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  },
+                  {
+                    "name": "accel",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "MAX_speed",
+                    "value": 0
+                  },
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "MIN_speed",
+                    "value": 0
+                  },
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "accel",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "connection": {
+          "echo_enable": true,
+          "poll_interval": 1.0,
+          "profile": {
+            "id": "0",
+            "name": "COM-port"
+          }
+        },
+        "parameters": {
+          "ID": 103,
+          "I_HOLD": 12,
+          "I_HOLD_DELAY": 16,
+          "I_RUN": 16,
+          "MAX_speed": 2.0,
+          "MIN_speed": 0.01,
+          "accel_per_sec": 2.0,
+          "current_wave_length": 800.0,
+          "steps_in_nm": 8000,
+          "threshold": 255
+        }
+      }
+    ],
+    "current_device_id": 0
+  },
+  "modulators": {
+    "ru": "Генераторы",
+    "devices": [
+      {
+        "id": 5,
+        "name": "Modulator",
+        "name_ru": "Модулятор",
+        "client_attr": "Modulator_client",
+        "commands": {
+          "ECHO": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "params": [
+                  {
+                    "name": "echo",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "echo",
+                    "value": 0
+                  }
+                ]
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "params": [
+                  {
+                    "name": "echo_echo",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "echo_echo",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          },
+          "set_frq_1": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "frq",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "frq",
+                    "value": 0
+                  }
+                ]
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "frq_echo",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "frq_echo",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          },
+          "set_frq_2": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "frq",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "frq",
+                    "value": 0
+                  }
+                ]
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "frq_echo",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "frq_echo",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          },
+          "set_power": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "power",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "power",
+                    "value": 0
+                  }
+                ]
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "power_echo",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "power_echo",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          },
+          "sweep_frq_time_ms": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "time_ms",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "time_ms",
+                    "value": 0
+                  }
+                ]
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "time_echo",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "time_echo",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          },
+          "sweep_frq_step": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "step",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "step",
+                    "value": 0
+                  }
+                ]
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "step_echo",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "step_echo",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          },
+          "sweep_frq_start": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": []
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "start_echo",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "start_echo",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          },
+          "sweep_frq_stop": {
+            "coder_type": "bin",
+            "decoder_type": "bin",
+            "coder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": []
+              }
+            },
+            "decoder_params": {
+              "bin": {
+                "byteorder": "little",
+                "order": [
+                  "data",
+                  "address",
+                  "command_code",
+                  "checksum"
+                ],
+                "params": [
+                  {
+                    "name": "stop_echo",
+                    "value": 0,
+                    "length": 2,
+                    "sign": false
+                  }
+                ],
+                "start_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                },
+                "address": {
+                  "use": true,
+                  "length": 1
+                },
+                "command_code": {
+                  "use": true,
+                  "length": 1,
+                  "value": 0
+                },
+                "length_field": {
+                  "use": false,
+                  "length": 1,
+                  "include": "data_only"
+                },
+                "checksum": {
+                  "use": true,
+                  "length": 2,
+                  "algorithm": "CRC16_MODBUS",
+                  "source": "from_address"
+                },
+                "end_byte": {
+                  "use": false,
+                  "length": 1,
+                  "value": 255
+                }
+              },
+              "ascii": {
+                "cmd_prefix": "",
+                "cmd_suffix": "",
+                "frame_terminator": "",
+                "cmd_separator": "",
+                "enc": "ascii",
+                "address": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "command": {
+                  "value": "",
+                  "fmt": "s",
+                  "prefix": "",
+                  "suffix": ""
+                },
+                "params": [
+                  {
+                    "param_prefix": "",
+                    "param_suffix": "",
+                    "param_fmt": ".1f",
+                    "param_space": 10,
+                    "param_alignment": "right",
+                    "fill_symbol": "0",
+                    "name": "stop_echo",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "connection": {
+          "profile": {
+            "id": "0",
+            "name": "COM-port"
+          },
+          "echo_enable": true,
+          "poll_interval": 1.0
+        },
+        "parameters": {
+          "x_min": 0,
+          "y_min": 0,
+          "x_max": 0,
+          "y_max": 0,
+          "x_um_to_pixel": 0.0,
+          "y_um_to_pixel": 0.0,
+          "x_backlash": 0.0,
+          "y_backlash": 0.0,
+          "x_hysteresis": 0.0,
+          "y_hysteresis": 0.0,
+          "xsqr_hysteresis": 0.0,
+          "ysqr_hysteresis": 0.0
+        }
+      }
+    ],
+    "current_device_id": 0
+  }
+}

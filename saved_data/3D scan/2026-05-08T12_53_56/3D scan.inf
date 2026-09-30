@@ -1,0 +1,29 @@
+{
+  "comment": "",
+  "name": "3D scan",
+  "metadata": {
+    "created": "2026-05-08T12_53_56",
+    "description": "3D scan"
+  },
+  "parameters": {
+    "x1": 0,
+    "y1": 0,
+    "z1": 0,
+    "x2": 32172,
+    "y2": 22575,
+    "z2": 0,
+    "step_x": 4095,
+    "step_y": 4095,
+    "step_z": 1024,
+    "accum_time": 10,
+    "Np_x": 8,
+    "Np_y": 6,
+    "Np_z": 1,
+    "Np_slice": 48,
+    "Np_total": 48
+  },
+  "units": {
+    "cord": "LSB",
+    "accum_time_ms": "ms"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "comment": "Скан, похожий на ОДМР, но он явно не контрастный. Снимался SiC",
+  "name": "ODMR Spectrum measurement",
+  "metadata": {
+    "created": "2026-04-08T10_04_40",
+    "description": "ODMR Spectrum measurement"
+  },
+  "parameters": {
+    "start_nm": 1000.0,
+    "end_nm": 1600.0,
+    "step_nm": 0.5,
+    "accum_time_ms": 100,
+    "number_repetitions": 100000,
+    "data_points": 0
+  },
+  "units": {
+    "start_nm": "nanometers",
+    "end_nm": "nanometers",
+    "step_nm": "nanometers",
+    "accum_time_ms": "milliseconds"
+  }
+}

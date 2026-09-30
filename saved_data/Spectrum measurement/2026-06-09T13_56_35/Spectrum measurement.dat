@@ -1,0 +1,18 @@
+# comment: 
+# name: Spectrum measurement
+# metadata: {'created': '2026-06-09T13_56_35', 'description': 'Spectrum measurement'}
+# parameters: {'start_nm': 740.0, 'end_nm': 750.0, 'step_nm': 1.0, 'accum_time_ms': 1000, 'number_repetitions': 1, 'data_points': 0}
+# units: {'start_nm': 'nanometers', 'end_nm': 'nanometers', 'step_nm': 'nanometers', 'accum_time_ms': 'milliseconds'}
+X1	Y1
+7.400000e+02	1.184926e+06
+7.400800e+02	1.204705e+06
+7.417100e+02	1.171787e+06
+7.421700e+02	1.165686e+06
+7.436400e+02	1.125556e+06
+7.443600e+02	1.078767e+06
+7.453700e+02	1.015362e+06
+7.468400e+02	9.815260e+05
+7.479600e+02	9.586670e+05
+7.482700e+02	9.279730e+05
+7.495300e+02	8.676320e+05
+7.500000e+02	8.607040e+05
